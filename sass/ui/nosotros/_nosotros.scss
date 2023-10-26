@@ -1,0 +1,24 @@
+@use "../../base/variables" as v;
+@use "../../base/mixins" as m;
+
+
+.nosotros{
+  
+
+    &__grid{
+        display: grid;
+        gap: 4rem;
+        @media (min-width: 768px){
+            grid-template-columns: repeat(2, 1fr);
+            align-items: center;
+
+        }
+    }
+
+    &__imagen{
+        width: 50rem;
+        margin: 0 auto;
+     
+    }
+    &__contenido{}
+}

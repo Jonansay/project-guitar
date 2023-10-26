@@ -1,0 +1,80 @@
+@use "../../base/variables" as v;
+@use "../../base/mixins" as m;
+
+.blog{
+    
+
+    &__heading{}
+    &__grid{
+        display: grid;
+        gap: 4rem;
+
+        @include m.tablet{
+            grid-template-columns: repeat(2, 1fr);
+
+        }
+        @include m.desktop{
+            grid-template-columns: repeat(4, 1fr);
+
+        }
+    }
+    &__grid--pagina{
+        @include m.desktop{
+            grid-template-columns: repeat(3, 1fr);
+
+        }
+
+
+    }
+}
+
+.entrada{
+    max-width: 80rem;
+    margin: 0 auto;
+
+    &__imagen{}
+    &__contenido{
+        padding: 2rem;
+    }
+    &__titulo{
+        font-weight: 400;
+        font-size: 2.8rem;
+        margin: 0;
+        line-height: 1.2;
+
+
+    }
+    &__fecha{
+        font-size: 1.6rem;
+        color: v.$primario;
+
+    }
+    &__texto{
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 4;
+        overflow: hidden;
+        font-size: 1.6rem;
+        
+    }
+    &__enlace{
+        margin-top: 2rem;
+        display: block;
+        text-decoration: none;
+        color: v.$negro;
+        padding: 1rem 5rem;
+        border: 2px solid v.$primario;
+        text-align: center;
+        font-size: 1.2rem;
+        font-weight: 900;
+        text-transform: uppercase;
+        transition-property:background-color ;
+        transition-duration: .3s;
+
+        &:hover{
+            background-color: v.$primario;
+            color: v.$blanco;
+        }
+
+    }
+}

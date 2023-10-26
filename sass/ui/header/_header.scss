@@ -1,0 +1,70 @@
+@use '../../base/variables' as v;
+@use '../../base/mixins' as m;
+
+.header{
+    background-image: linear-gradient(to right, rgb(0 0 0 / .7), rgb(0 0 0 / .7)), url(../img/header.jpg);
+    // background-image: url(../img/header.jpg);
+    background-size: cover;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    padding: 5rem 0;
+    position: relative;
+
+  
+    &__barra{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        @include m.tablet{
+            flex-direction: row;
+            justify-content: space-between;
+
+        }
+
+    
+      
+        
+      
+     
+    }
+    &__logo{
+        width: 30rem;
+    }
+    &__guitarra{
+        display: none;
+
+        @media (min-width: 992px){
+           
+            display: block;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+
+            animation: mostrarImagen; 
+            animation-duration: 1s;
+            animation-delay: 0s;
+            animation-timing-function:ease-in-out ;
+            animation-iteration-count: 1;
+
+            // animation: 1s ease-in-out 0s mostrarImagen;
+
+        }
+    }
+    @keyframes mostrarImagen{
+        0%{
+            opacity: 0;
+            transform: translatex(-10rem);
+
+        }
+        50%{
+            opacity: 0;
+        }
+        100%{
+            opacity: 1;
+            transform: translatex(0);
+
+        }
+
+    }
+  
+}
